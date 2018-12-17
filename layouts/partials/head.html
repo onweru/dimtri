@@ -1,0 +1,114 @@
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <script>
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      var originalAddEventListener = EventTarget.prototype.addEventListener,
+      oldWidth = window.innerWidth;
+      
+      EventTarget.prototype.addEventListener = function (eventName, eventHandler, useCapture) {
+        if (eventName === "resize") {
+          originalAddEventListener.call(this, eventName, function (event) {
+            if (oldWidth === window.innerWidth) {
+              return;
+            }
+            else if (oldWidth !== window.innerWidth) {
+              oldWidth = window.innerWidth;
+            }
+            if (eventHandler.handleEvent) {
+              eventHandler.handleEvent.call(this, event);
+            }
+            else {
+              eventHandler.call(this, event);
+            };
+          }, useCapture);
+        }
+        else {
+          originalAddEventListener.call(this, eventName, eventHandler, useCapture);
+        };
+      };
+    };
+  </script>
+  <title>{{ .Site.Title }}{{ with .Title }} - {{ . }}{{ end }}</title>
+  <link rel='stylesheet' id='layerslider-css'  href='/css/layerslider.css?ver=6.7.6' />
+  <link rel='stylesheet' id='wp-block-library-css'  href='/css/style.min.css?ver=5.0.1' />
+  <link rel='stylesheet' id='wp-block-library-theme-css'  href='/css/theme.min.css?ver=5.0.1' />
+  <link rel='stylesheet' id='contact-form-7-css'  href='/css/styles.css?ver=5.1' />
+  <link rel='stylesheet' id='go-pricing-styles-css'  href='/css/go_pricing_styles.css?ver=3.3.13' />
+  <link rel='stylesheet' id='tp_twitter_plugin_css-css'  href='/css/tp_twitter_plugin.css?ver=1.0' />
+  <link rel='stylesheet' id='rs-plugin-settings-css'  href='/css/settings.css?ver=5.4.8.1' />
+  <link rel='stylesheet' id='the7-Defaults-css'  href='/css/Defaults.css?ver=5.0.1' />
+  <link rel='stylesheet' id='the7-icomoon-material-24x24-css'  href='/css/icomoon-material-24x24.css?ver=5.0.1' />
+  <link rel='stylesheet' id='the7-icomoon-icomoonfree-16x16-css'  href='/css/icomoon-icomoonfree-16x16.css?ver=5.0.1' />
+  <link rel='stylesheet' id='js_composer_front-css'  href='/css/js_composer.min.css?ver=5.6' />
+  <link rel='stylesheet' id='dt-web-fonts-css'  href='/css/gfonts-1.css' />
+  <link rel='stylesheet' id='dt-main-css'  href='/css/main.min.css?ver=7.2.0' />
+  {{ partial "inline.html" . }}
+  <link rel='stylesheet' id='dt-awsome-fonts-back-css'  href='/css/back-compat.min.css?ver=7.2.0' />
+  <link rel='stylesheet' id='dt-awsome-fonts-css'  href='/css/all.min.css?ver=7.2.0' />
+  <link rel='stylesheet' id='dt-fontello-css'  href='/css/fontello.min.css?ver=7.2.0' />
+  <link rel='stylesheet' id='the7pt-static-css'  href='/css/post-type.min.css?ver=7.2.0' />
+  <link rel='stylesheet' id='dt-custom-css'  href='/css/custom.css?ver=28e23e22e41d' />
+  <link rel='stylesheet' id='dt-media-css'  href='/css/media.css?ver=28e23e22e41d' />
+  <link rel='stylesheet' id='dt-legacy-css'  href='/css/legacy.css?ver=28e23e22e41d' />
+  <link rel='stylesheet' id='the7pt.less-css'  href='/css/post-type-dynamic.css?ver=28e23e22e41d' />
+  <link rel='stylesheet' id='style-css'  href='/css/style.css?ver=7.2.0' />
+  <link rel='stylesheet' id='ultimate-google-fonts-css'  href='/css/gfonts-2.css' />
+  <link rel='stylesheet' id='ultimate-style-css'  href='/css/style.min1.css?ver=3.17.1' />
+  <link rel='stylesheet' id='ultimate-headings-style-css'  href='/css/headings.min.css?ver=3.17.1' />
+  <link rel='stylesheet' id='ultimate-animate-css'  href='/css/animate.min.css?ver=3.17.1' />
+  <link rel='stylesheet' id='ultimate-tooltip-css'  href='/css/tooltip.min.css?ver=3.17.1' />
+  <link rel='stylesheet' id='ult-dualbutton-css'  href='/css/dual-button.min.css?ver=3.17.1' />
+  <script>
+    /* <![CDATA[ */
+    var slide_in = {"demo_dir":"https:\/\/www.adaptechgroup.com\/wp-content\/plugins\/convertplug\/modules\/slide_in\/assets\/demos"};
+    /* ]]> */
+  </script>
+  <script src='/js/jquery.js?ver=1.12.4'></script>
+  <script src='/js/jquery-migrate.min.js?ver=1.4.1'></script>
+  <script src='/js/greensock.js?ver=1.19.0'></script>
+  <script src='/js/layerslider.kreaturamedia.jquery.js?ver=6.7.6'></script>
+  <script src='/js/layerslider.transitions.js?ver=6.7.6'></script>
+  <script>
+    var oldGS=window.GreenSockGlobals,oldGSQueue=window._gsQueue,oldGSDefine=window._gsDefine;window._gsDefine=null;delete(window._gsDefine);var gwGS=window.GreenSockGlobals={};
+  </script>
+  <script src='/js/TweenMax.min.js'></script>
+  <script>
+    try{window.GreenSockGlobals=null;window._gsQueue=null;window._gsDefine=null;delete(window.GreenSockGlobals);delete(window._gsQueue);delete(window._gsDefine);window.GreenSockGlobals=oldGS;window._gsQueue=oldGSQueue;window._gsDefine=oldGSDefine;}catch(e){}
+  </script>
+  <script>
+    /* <![CDATA[ */
+    var dtLocal = {"themeUrl":"https:\/\/www.adaptechgroup.com\/wp-content\/themes\/dt-the7","passText":"To view this protected post, enter the password below:","moreButtonText":{"loading":"Loading...","loadMore":"Load more"},"postID":"592","ajaxurl":"https:\/\/www.adaptechgroup.com\/wp-admin\/admin-ajax.php","contactMessages":{"required":"One or more fields have an error. Please check and try again.","terms":"Please accept the privacy policy."},"ajaxNonce":"9c509ef3b5","pageData":{"type":"page","template":"page","layout":null},"themeSettings":{"smoothScroll":"off","lazyLoading":false,"accentColor":{"mode":"gradient","color":"135deg|#1ebbf0 30%|#39dfaa 100%"},"desktopHeader":{"height":""},"floatingHeader":{"showAfter":140,"showMenu":true,"height":60,"logo":{"showLogo":true,"html":"<img class=\" preload-me\" src=\"https:\/\/www.adaptechgroup.com\/wp-content\/uploads\/2018\/12\/main-adaptech-logo-white.png\" srcset=\"https:\/\/www.adaptechgroup.com\/wp-content\/uploads\/2018\/12\/main-adaptech-logo-white.png 526w\" width=\"263\" height=\"35\"   sizes=\"263px\" alt=\"Adaptech Group\" \/>","url":"https:\/\/www.adaptechgroup.com\/"}},"mobileHeader":{"firstSwitchPoint":1050,"secondSwitchPoint":778,"firstSwitchPointHeight":80,"secondSwitchPointHeight":60},"stickyMobileHeaderFirstSwitch":{"logo":{"html":"<img class=\" preload-me\" src=\"https:\/\/www.adaptechgroup.com\/wp-content\/uploads\/2018\/12\/main-adaptech-logo.png\" srcset=\"https:\/\/www.adaptechgroup.com\/wp-content\/uploads\/2018\/12\/main-adaptech-logo.png 526w\" width=\"263\" height=\"35\"   sizes=\"263px\" alt=\"Adaptech Group\" \/>"}},"stickyMobileHeaderSecondSwitch":{"logo":{"html":"<img class=\" preload-me\" src=\"https:\/\/www.adaptechgroup.com\/wp-content\/uploads\/2018\/12\/main-adaptech-logo.png\" srcset=\"https:\/\/www.adaptechgroup.com\/wp-content\/uploads\/2018\/12\/main-adaptech-logo.png 526w\" width=\"263\" height=\"35\"   sizes=\"263px\" alt=\"Adaptech Group\" \/>"}},"content":{"textColor":"#85868c","headerColor":"#333333"},"boxedWidth":"1340px","stripes":{"stripe1":{"textColor":"#787d85","headerColor":"#3b3f4a"},"stripe2":{"textColor":"#8b9199","headerColor":"#ffffff"},"stripe3":{"textColor":"#ffffff","headerColor":"#ffffff"}}},"VCMobileScreenWidth":"768"};
+    var dtShare = {"shareButtonText":{"facebook":"Share on Facebook","twitter":"Tweet","pinterest":"Pin it","linkedin":"Share on Linkedin","whatsapp":"Share on Whatsapp","google":"Share on Google Plus","download":"Download image"},"overlayOpacity":"85"};
+    /* ]]> */
+  </script>
+  <script src='/js/above-the-fold.min.js?ver=7.2.0'></script>
+  <script src='/js/ultimate-params.min.js?ver=3.17.1'></script>
+  <script src='/js/custom.min.js?ver=3.17.1'></script>
+  <script src='/js/jquery-appear.min.js?ver=3.17.1'></script>
+  <script src='/js/headings.min.js?ver=3.17.1'></script>
+  <script src='/js/dual-button.min.js?ver=3.17.1'></script>
+  <link rel="canonical" href="{{ .Permalink }}" />
+  <link rel='shortlink' href='{{ .Permalink }}' />
+  <meta property="og:site_name" content="Adaptech Group" />
+  <meta property="og:title" content="Home" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      var load = document.getElementById("load");
+      
+      var removeLoading = setTimeout(function() {
+        load.className += " loader-removed";
+      }, 500);
+    });
+  </script>
+  <script>
+    function setREVStartSize(e){									
+      try{ e.c=jQuery(e.c);var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
+        if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})					
+      }catch(d){console.log("Failure at Presize of Slider:"+d)}						
+    };
+  </script>
+  <noscript>
+    <style> .wpb_animate_when_almost_visible { opacity: 1; }</style>
+  </noscript>
